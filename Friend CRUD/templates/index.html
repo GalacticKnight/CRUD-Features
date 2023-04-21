@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>All My Friends</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Occupation</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+
+
+        <tbody>
+        {% for one_friend in all_friends %}
+            <tr>
+                <td>{{one_friend.first_name}}</td>
+                <td>{{one_friend.last_name}}</td>
+                <td>{{one_friend.occupation}}</td>
+                <td>
+                    <a href="/friend/show/{{ one_friend.id }}">Show</a>| 
+                    <a href="/friend/edit/{{ one_friend.id }}">Edit</a> |
+                    <a href="/friend/delete/{{ one_friend.id }}">Delete</a>
+                </td> 
+                <br>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <a href="/friends/new" class="btn btn-primary">Add a User</a>
+    </body>
+</html>
